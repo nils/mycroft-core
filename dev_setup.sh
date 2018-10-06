@@ -141,11 +141,7 @@ function install_deps() {
 VIRTUALENV_ROOT=${VIRTUALENV_ROOT:-"${TOP}/.venv"}
 
 function install_venv() {
-    python3 -m venv "${VIRTUALENV_ROOT}/" --without-pip
-    # Force version of pip for reproducability, but there is nothing special
-    # about this version.  Update whenever a new version is released and
-    # verified functional.
-    curl https://bootstrap.pypa.io/get-pip.py | "${VIRTUALENV_ROOT}/bin/python" - 'pip==18.0.0'
+    python3 -m venv "${VIRTUALENV_ROOT}/"
 }
 
 install_deps
